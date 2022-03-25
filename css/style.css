@@ -1,0 +1,415 @@
+/* nunito-300 - latin_cyrillic */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""),
+    url("../fonts/nunito-v22-latin_cyrillic-300.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/nunito-v22-latin_cyrillic-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-600 - latin_cyrillic */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""),
+    url("../fonts/nunito-v22-latin_cyrillic-600.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/nunito-v22-latin_cyrillic-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-900 - latin_cyrillic */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""),
+    url("../fonts/nunito-v22-latin_cyrillic-900.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/nunito-v22-latin_cyrillic-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  font-size: 18px;
+  color: #434343;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.header {
+  background-color: #296c82;
+  padding: 13px 0;
+}
+.header__container {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 1140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.main {
+  padding: 60px 30px;
+}
+.main__title {
+  font-weight: 300;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main__box {
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  height: 540px;
+}
+.main__subtitle {
+  font-weight: 300;
+  font-size: 26px;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.main__btn {
+  min-width: 230px;
+  height: 50px;
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  color: #296c82;
+  display: block;
+  margin: 0 auto;
+
+  transition-property: background-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+.main__btn:hover {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+  background-color: #296c82;
+  color: #fff;
+}
+.main__subtitle_result {
+  padding-bottom: 50px;
+}
+.selection {
+  padding: 50px;
+}
+.selection__list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 100%;
+
+  /*for Firefox*/
+  scrollbar-color: rgb(140, 140, 140, 0.1);
+  scrollbar-width: thin;
+}
+.selection__list::-webkit-scrollbar {
+  width: 6px;
+  height: 228px;
+}
+.selection__list::-webkit-scrollbar-thumb {
+  background: rgb(140, 140, 140, 0.1);
+  border-radius: 8px;
+}
+.selection__item {
+  display: flex;
+  margin-bottom: 15px;
+}
+.selection__item:last-child {
+  margin-bottom: 0;
+}
+.selection__theme {
+  width: 100%;
+  max-width: 520px;
+  background-color: #f1f9fb;
+  border: none;
+  border-radius: 12px;
+  height: 66px;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: left;
+  padding: 16px 20px;
+
+  transition-property: background-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.selection__theme:hover {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  background-color: #296c82;
+  color: #fff;
+}
+.selection__result {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  height: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.selection__result-ratio {
+  font-weight: 600;
+  font-size: 22px;
+  color: #296c82;
+}
+.selection__result-text {
+  font-weight: 300;
+  font-size: 12px;
+  color: #8c8c8c;
+}
+.main__box-question {
+  padding: 60px 120px;
+  height: auto;
+  min-height: 540px;
+}
+.main__form-question {
+  position: relative;
+}
+
+.main__form-question::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-weight: 300;
+  font-size: 18px;
+  color: #8c8c8c;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+.answer {
+  font-weight: 600;
+  font-size: 18px;
+  color: #434343;
+  position: relative;
+  padding-left: 65px;
+  margin-bottom: 26px;
+  line-height: 40px;
+}
+.answer__checkbox {
+  display: inline-block;
+  margin-right: 25px;
+  width: 40px;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  margin: 0 0 0 -65px;
+}
+.answer__checkbox::before {
+  /*квадратик*/
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+.answer__checkbox::after {
+  /*стрелочка*/
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 17px;
+  height: 8px;
+  border-left: 2px solid #434343;
+  border-bottom: 2px solid #434343;
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: 0.24s ease;
+}
+.answer__checkbox:checked:after {
+  opacity: 1;
+}
+.answer__checkbox:focus:before,
+.answer__checkbox:hover:before {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+/*радио кнопочки*/
+.answer__radio {
+  width: 40px;
+  height: 40px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  margin: 0 0 0 -65px;
+}
+.answer__radio::before {
+  /*кружочек*/
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+.answer__radio::after {
+  /*точечка*/
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #434343;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.24s ease;
+}
+.answer__radio:checked:after {
+  opacity: 1;
+}
+.answer__radio:focus:before,
+.answer__radio:hover:before {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main_box_result {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__subtitle_result {
+}
+.result__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: auto;
+}
+.result__ratio {
+  width: 127px;
+  height: 127px;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #296c82;
+}
+.result__ratio_1 {
+  background: #dc1c1c;
+}
+.result__ratio_2 {
+  background: #efcf24;
+}
+.result__ratio_3 {
+  background: #49f050;
+}
+.result__text {
+  font-weight: 600;
+  font-size: 18px;
+  color: #434343;
+  margin-top: 20px;
+}
+
+.result__return {
+}
+@media (max-width: 1024px) {
+  .selection__list {
+    padding-right: 30px;
+  }
+  .selection__theme {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header__container {
+    padding: 0 20px;
+  }
+  .main {
+    padding: 40px 20px;
+  }
+  .main__title {
+    font-size: 40px;
+  }
+  .main__box {
+    padding: 40px;
+  }
+  .selection__list {
+    padding-right: 15px;
+  }
+
+  .selection__theme {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .selection__item {
+    margin-bottom: 10px;
+  }
+  .selection__result {
+    display: flex;
+    align-items: center;
+  }
+  .selection__result-text {
+    display: none;
+  }
+  .selection__theme:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .main__btn:not(.result__return) {
+    margin-left: 0;
+    min-width: 100%;
+  }
+  .main__form-question::after {
+    bottom: -35px;
+  }
+  .main__subtitle {
+    font-size: 20px;
+  }
+  .main {
+    padding: 30px 10px;
+  }
+  .main__box {
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .selection__result-ratio {
+    font-size: 18px;
+  }
+}
