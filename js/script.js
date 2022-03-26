@@ -154,6 +154,7 @@ const createAnswer = data => {
         const input = document.createElement('input');
         input.type = type;
         input.className = `answer__${type}`;
+        input.name = 'answer';
 
         const text = document.createTextNode(item);
 
@@ -213,12 +214,12 @@ const renderQuiz = quiz => {
 
             let ok = false;
 
-           /* const answer = [...form.answer].map(input => {
+           const answer = [...form.answer].map(input => {
 
                 if (input.checked) ok = true;
                 return input.checked ? input.value : false;
 
-            });*/
+            });
 
             if (ok) {
                 console.log(answer);
