@@ -9,7 +9,25 @@ const getData = () => {
     return fetch('db/quiz_db.json').then(response => response.json());
 };
 
-const hideElem = elem => {
+const showElem = elem => {
+
+    let opacity = 0;
+    elem.opacity = opacity;
+    elem.style.display = '';
+
+    const animation = () => {
+        opacity += 0.05;
+        elem.style.opacity = opacity;
+
+        if (opacity < 1) {
+            requestAnimationFrame(animation);
+        }
+    };
+
+    requestAnimationFrame(animation);
+}
+
+const hideElem = (elem, callback) => {
 
 let opacity = getComputedStyle(elem).getPropertyValue('opacity');
 
@@ -22,6 +40,7 @@ if (opacity > 0 ) {
 }
 else {
     elem.style.display = 'none';
+    if (callback) callback();
 }
 };
 
@@ -173,6 +192,14 @@ const showResult = (result, quiz) => {
 
     block.append(button);
     main.append(block);
+
+    button.addEventListener('click', () => {
+        hideElem(block, () => {
+              showElem(title);
+              showElem(selection);  
+        });
+    
+    });
 
 };
 
