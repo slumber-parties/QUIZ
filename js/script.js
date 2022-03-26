@@ -211,9 +211,33 @@ const createAnswer = data => {
     return {
         labels, keys
     }
-}
+};
+
+const showResult = () => {
+
+    const block = document.createElement('div');
+    block.className = 'main__box main_box_result result';
+
+    block.innerHTML = `
+        <h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
+
+            <div class="result__box">
+                <p class="result__ratio">10/10</p>
+                <p class="result__text">Отличный результат!</p>
+            </div>`;
+
+
+    const button = document.createElement('button');
+    button.className = 'main__btn result__return';
+    button.textContent = 'К списку квизов';
+
+    block.append(button);
+    main.append(block);
+
+};
 
 const renderQuiz = quiz => {
+
     hideElem(title);
     hideElem(selection);
 
@@ -270,13 +294,20 @@ const renderQuiz = quiz => {
 
             if (ok) {
 
+         if ( answer.every((result, i) => !!result === answersData.keys[i]) ) {
+
+            result++;
+
+         }
+
                 if (questionCount < quiz.list.length) {
 
                     sowQuestion();  
 
                 } else {
 
-                    showResult();
+                    hideElem(questionBox);
+                    showResult(result, quiz);
 
                 }
               
