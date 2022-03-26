@@ -145,8 +145,31 @@ const renderTheme = data => {
 
 };
 
+
+
+const createKeyAnswers = data => {
+
+    const keys = [];
+
+    for(let i =0; i < data.answers.length; i++) {
+
+        if (data.type === 'radio') {
+
+            keys.push([data.answers[i], !i]);
+        } else {
+
+            keys.push([data.answers[i], i < data.correct]);
+        }
+    }
+
+
+    return keys;
+};
+
 const createAnswer = data => {
+
     const type = data.type;
+    const answers = createKeyAnswers(data);
 
     return data.answers.map(item => {
         const label = document.createElement('label');
@@ -175,6 +198,7 @@ const renderQuiz = quiz => {
     main.append(questionBox);
 
     let questionCount = 0;
+    let result = 0;
 
     const sowQuestion = () => {
         const data = quiz.list[questionCount];
@@ -220,7 +244,17 @@ const renderQuiz = quiz => {
             });
 
             if (ok) {
-                console.log(answer);
+
+                if (questionCount < quiz.list.length) {
+
+                    sowQuestion();  
+
+                } else {
+
+                    showResult();
+
+                }
+              
             } else {
                 console.warn('ERRRORRR');
                 form.classList.add('main__form-question_error');
