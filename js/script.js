@@ -176,7 +176,6 @@ const showResult = (result, quiz) => {
         if (percent >= quiz.result[i][0]) ratio = i;
         
     }
-
     block.innerHTML = `
         <h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
 
@@ -184,7 +183,6 @@ const showResult = (result, quiz) => {
                 <p class="result__ratio result__ratio_${ratio + 1}">${result}/${quiz.list.length}</p>
                 <p class="result__text">${quiz.result[ratio][1]}</p>
             </div>`;
-
 
     const button = document.createElement('button');
     button.className = 'main__btn result__return';
@@ -202,7 +200,6 @@ const showResult = (result, quiz) => {
     });
 
 };
-
 
 const saveResult = (result, id) => {
 
