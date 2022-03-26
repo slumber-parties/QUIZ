@@ -5,97 +5,8 @@ const selection = document.getElementsByClassName('selection')[0];
 const title = document.getElementsByClassName('main__title')[0];
 
 const getData = () => {
-    const dataBase = [
-        {
-            id: '01',
-            theme: 'Тема01',
-            result: [
-                [40, 'Плохой результат, нужно развиваться'],
-                [80, 'Очень хорошо'],
-                [100, 'Отличный результат!']
-            ],
-            list: [
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'правильный2', 'неправильный', 'неправильный'],
-                    correct: 2
-                },
-                {
-                    type: 'radio',
-                    question: 'Вопрос',
-                    answers: ['правильный', 'неправильный', 'неправильный', 'неправильный'],
-    
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'правильный2', 'правильный3', 'неправильный'],
-                    correct: 3
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'правильный2', 'неправильный', 'неправильный'],
-                    correct: 2
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный', 'правильный', 'правильный', 'правильный'],
-                    correct: 4
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный', 'неправильный', 'неправильный', 'неправильный'],
-                    correct: 1
-                },
-            ]
-        },
-        {
-            id: '02',
-            theme: 'Тема02',
-            result: [
-                [30, 'Плохой результат, нужно развиваться'],
-                [60, 'Очень хорошо'],
-                [100, 'Отличный результат!']
-            ],
-            list: [
-                {
-                    type: 'radio',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'неправильный', 'неправильный', 'неправильный'],
-    
-                },
-                {
-                    type: 'radio',
-                    question: 'Вопрос',
-                    answers: ['правильный', 'неправильный', 'неправильный', 'неправильный'],
-    
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'правильный2', 'правильный3', 'неправильный'],
-                    correct: 3
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный1', 'правильный2', 'неправильный', 'неправильный'],
-                    correct: 2
-                },
-                {
-                    type: 'checkbox',
-                    question: 'Вопрос',
-                    answers: ['правильный', 'неправильный', 'неправильный', 'неправильный'],
-                    correct: 1
-                },
-            ]
-        }
-    ];
-    return dataBase;
+    //промис
+    return fetch('db/quiz_db.json').then(response => response.json());
 };
 
 const hideElem = elem => {
@@ -169,7 +80,7 @@ const createKeyAnswers = data => {
 
     const keys = [];
 
-    for(let i =0; i < data.answers.length; i++) {
+    for(let i = 0; i < data.answers.length; i++) {
 
         if (data.type === 'radio') {
 
@@ -213,17 +124,36 @@ const createAnswer = data => {
     }
 };
 
-const showResult = () => {
+const showResult = (result, quiz) => {
 
     const block = document.createElement('div');
     block.className = 'main__box main_box_result result';
+
+    //высчитываем проценты
+
+    const percent = result / quiz.list.length * 100;
+
+    let ratio = 0;
+
+    console.log('quiz.list.length', quiz.list.length);
+    console.log('percent', percent);
+
+
+
+    for (let i = 0; i < quiz.list.length; i++) {
+
+
+        console.log('quiz.result[i][0]', quiz.result[i][0]);
+        if (percent >= quiz.result[i][0]) ratio = i;
+        
+    }
 
     block.innerHTML = `
         <h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
 
             <div class="result__box">
-                <p class="result__ratio">10/10</p>
-                <p class="result__text">Отличный результат!</p>
+                <p class="result__ratio result__ratio_${ratio + 1}">${result}/${quiz.list.length}</p>
+                <p class="result__text">${quiz.result[ratio][1]}</p>
             </div>`;
 
 
@@ -333,9 +263,9 @@ const addClick = (buttons, data) => {
     });
 };
 
-const initQuiz = () => {
+const initQuiz = async () => {
 
-    const data = getData(); //data getting from database
+    const data = await getData(); //data getting from database
 
    const buttons = renderTheme(data); // data rendering
 
