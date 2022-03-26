@@ -45,10 +45,23 @@ const renderTheme = data => {
        button.className= 'selection__theme';
        button.dataset.id = data[i].id;
        button.textContent = data[i].theme;
-
        li.append(button);
-       list.append(li);
-       buttons.push(button);
+       const result = loadResult(data[i].id);
+
+       if (result) {
+           
+        const p = document.createElement('p');
+
+         p.className = 'selection__result';
+         p.innerHTML = `
+            <span class="selection__result-ratio">${result}/${data[i].list.length}</span>
+            <span class="selection__result-text">Последний результат</span>`;  
+
+            li.append(p);
+       }
+
+      list.append(li);
+      buttons.push(button);
 
     }
 
@@ -74,6 +87,10 @@ const shuffle = array => {
 
     return newArray;
 
+}
+
+const loadResult = id => {
+   return localStorage.getItem(id);
 }
 
 const createKeyAnswers = data => {
@@ -135,15 +152,8 @@ const showResult = (result, quiz) => {
 
     let ratio = 0;
 
-    console.log('quiz.list.length', quiz.list.length);
-    console.log('percent', percent);
+    for (let i = 0; i < quiz.result.length; i++) {
 
-
-
-    for (let i = 0; i < quiz.list.length; i++) {
-
-
-        console.log('quiz.result[i][0]', quiz.result[i][0]);
         if (percent >= quiz.result[i][0]) ratio = i;
         
     }
@@ -165,6 +175,13 @@ const showResult = (result, quiz) => {
     main.append(block);
 
 };
+
+
+const saveResult = (result, id) => {
+
+    localStorage.setItem(id, result);
+
+}
 
 const renderQuiz = quiz => {
 
@@ -238,7 +255,7 @@ const renderQuiz = quiz => {
 
                     hideElem(questionBox);
                     showResult(result, quiz);
-
+                    saveResult(result, quiz.id);
                 }
               
             } else {
