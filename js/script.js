@@ -190,12 +190,10 @@ const showResult = (result, quiz) => {
 
     block.append(button);
     main.append(block);
+    showElem(block);
 
     button.addEventListener('click', () => {
-        hideElem(block, () => {
-              showElem(title);
-              showElem(selection);  
-        });
+        hideElem(block, initQuiz);
     
     });
 
@@ -208,19 +206,21 @@ const saveResult = (result, id) => {
 }
 
 const renderQuiz = quiz => {
-
-    hideElem(title);
-    hideElem(selection);
-
     const questionBox = document.createElement('div');
     questionBox.className = 'main__box main__box-question';
 
-    main.append(questionBox);
+    hideElem(title);
+    hideElem(selection, () => {
+        showElem(questionBox);
+        main.append(questionBox);
+    });
+
+
 
     let questionCount = 0;
     let result = 0;
 
-    const sowQuestion = () => {
+    const showQuestion = () => {
         const data = quiz.list[questionCount];
         questionCount++;
 
@@ -249,6 +249,7 @@ const renderQuiz = quiz => {
 
         questionBox.append(form);
 
+        showElem(form);
 
         form.addEventListener('submit', event => {
 
@@ -273,13 +274,15 @@ const renderQuiz = quiz => {
 
                 if (questionCount < quiz.list.length) {
 
-                    sowQuestion();  
+                    showQuestion();  
 
                 } else {
 
-                    hideElem(questionBox);
-                    showResult(result, quiz);
                     saveResult(result, quiz.id);
+                    hideElem(questionBox, () => {
+                          showResult(result, quiz); 
+                    });
+        
                 }
               
             } else {
@@ -292,7 +295,7 @@ const renderQuiz = quiz => {
             }
         });
         };
-    sowQuestion();
+    showQuestion();
 };
 
 const addClick = (buttons, data) => {
@@ -306,11 +309,14 @@ const addClick = (buttons, data) => {
 
 const initQuiz = async () => {
 
+    showElem(title);
+    showElem(selection);
+
     const data = await getData(); //data getting from database
 
-   const buttons = renderTheme(data); // data rendering
+    const buttons = renderTheme(data); // data rendering
 
-   addClick(buttons, data);
+    addClick(buttons, data);
 };
 
 initQuiz();

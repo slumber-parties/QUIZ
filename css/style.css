@@ -187,12 +187,14 @@ button {
   color: #8c8c8c;
 }
 .main__box-question {
+  opacity: 0;
   padding: 60px 120px;
   height: auto;
   min-height: 540px;
 }
 .main__form-question {
   position: relative;
+  opacity: 0;
 }
 
 .main__form-question::after {
@@ -313,6 +315,7 @@ fieldset {
 }
 
 .main_box_result {
+  opacity: 0;
   padding: 60px;
   display: flex;
   flex-direction: column;
