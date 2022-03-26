@@ -145,7 +145,25 @@ const renderTheme = data => {
 
 };
 
+//Метод генерации случайной перестановки Фишера-Йетса
+//проходит по массиву в обратном порядке и меняет элемент со случайным элементом перед ним
 
+const shuffle = array => {
+
+    const newArray = [...array];
+
+    for (let i = newArray.length - 1; i > 0; i--) {
+
+        let j = Math.floor(Math.random() * (i + 1));
+
+        //деструктуризация
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+
+    }
+
+    return newArray;
+
+}
 
 const createKeyAnswers = data => {
 
@@ -162,8 +180,7 @@ const createKeyAnswers = data => {
         }
     }
 
-
-    return keys;
+    return shuffle(keys); //перемешиваем ответы
 };
 
 const createAnswer = data => {
@@ -171,7 +188,7 @@ const createAnswer = data => {
     const type = data.type;
     const answers = createKeyAnswers(data);
 
-    return data.answers.map(item => {
+    const labels = answers.map((item, i) => {
         const label = document.createElement('label');
         label.className = 'answer';
         const input = document.createElement('input');
@@ -179,13 +196,21 @@ const createAnswer = data => {
         input.className = `answer__${type}`;
         input.name = 'answer';
 
-        const text = document.createTextNode(item);
+        input.value = i;
+
+        const text = document.createTextNode(item[0]);
 
         label.append(input, text);
 
         return label;
 
     });
+
+    const keys = answers.map(answer => answer[1]);
+
+    return {
+        labels, keys
+    }
 }
 
 const renderQuiz = quiz => {
@@ -216,7 +241,7 @@ const renderQuiz = quiz => {
         legend.className = 'main__subtitle';
         legend.textContent = data.question;
 
-        const answers = createAnswer(data);
+        const answersData = createAnswer(data);
 
         const button = document.createElement('button');
         button.className = 'main__btn question__next';
@@ -224,7 +249,7 @@ const renderQuiz = quiz => {
         button.textContent = 'Подтвердить';
     
 
-        fieldset.append(legend, ...answers);
+        fieldset.append(legend, ...answersData.labels);
         form.append(fieldset, button);
 
         questionBox.append(form);
@@ -256,8 +281,9 @@ const renderQuiz = quiz => {
                 }
               
             } else {
-                console.warn('ERRRORRR');
+               
                 form.classList.add('main__form-question_error');
+
                 setTimeout(() => {
                     form.classList.remove('main__form-question_error');
                 }, 1000)
