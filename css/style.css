@@ -301,6 +301,17 @@ fieldset {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+.main__form-question_error .answer__checkbox::before,
+.main__form-question_error .answer__radio::before {
+  animation: blink 0.3s ease-in-out 3;
+}
+
+@keyframes blink {
+  to {
+    box-shadow: 0px 2px 10px rgba(255, 0, 0, 0.8);
+  }
+}
+
 .main_box_result {
   padding: 60px;
   display: flex;

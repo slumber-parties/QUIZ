@@ -204,9 +204,7 @@ const renderQuiz = quiz => {
         form.append(fieldset, button);
 
         questionBox.append(form);
-  
-        console.log(form.answer);
-        console.log(form);
+
 
         form.addEventListener('submit', event => {
 
@@ -224,7 +222,11 @@ const renderQuiz = quiz => {
             if (ok) {
                 console.log(answer);
             } else {
-                console.log('Не выбран ни один ответ!');
+                console.warn('ERRRORRR');
+                form.classList.add('main__form-question_error');
+                setTimeout(() => {
+                    form.classList.remove('main__form-question_error');
+                }, 1000)
             }
         });
         };
