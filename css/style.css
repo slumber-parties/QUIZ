@@ -1,32 +1,32 @@
 /* nunito-300 - latin_cyrillic */
 @font-face {
-  font-family: "Nunito";
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 300;
-  src: local(""),
-    url("../fonts/nunito-v22-latin_cyrillic-300.woff2") format("woff2"),
+  src: local(''),
+    url('../fonts/nunito-v22-latin_cyrillic-300.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/nunito-v22-latin_cyrillic-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url('../fonts/nunito-v22-latin_cyrillic-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* nunito-600 - latin_cyrillic */
 @font-face {
-  font-family: "Nunito";
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 600;
-  src: local(""),
-    url("../fonts/nunito-v22-latin_cyrillic-600.woff2") format("woff2"),
+  src: local(''),
+    url('../fonts/nunito-v22-latin_cyrillic-600.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/nunito-v22-latin_cyrillic-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url('../fonts/nunito-v22-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* nunito-900 - latin_cyrillic */
 @font-face {
-  font-family: "Nunito";
+  font-family: 'Nunito';
   font-style: normal;
   font-weight: 900;
-  src: local(""),
-    url("../fonts/nunito-v22-latin_cyrillic-900.woff2") format("woff2"),
+  src: local(''),
+    url('../fonts/nunito-v22-latin_cyrillic-900.woff2') format('woff2'),
     /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/nunito-v22-latin_cyrillic-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      url('../fonts/nunito-v22-latin_cyrillic-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 html {
@@ -41,7 +41,7 @@ html {
 
 body {
   background-color: #fff;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   font-size: 18px;
   color: #434343;
@@ -233,7 +233,7 @@ fieldset {
 }
 .answer__checkbox::before {
   /*квадратик*/
-  content: "";
+  content: '';
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -243,7 +243,7 @@ fieldset {
 }
 .answer__checkbox::after {
   /*стрелочка*/
-  content: "";
+  content: '';
   position: absolute;
   top: 13px;
   left: 13px;
@@ -275,7 +275,7 @@ fieldset {
 }
 .answer__radio::before {
   /*кружочек*/
-  content: "";
+  content: '';
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -288,7 +288,7 @@ fieldset {
   position: absolute;
   top: 13px;
   left: 13px;
-  content: "";
+  content: '';
   width: 14px;
   height: 14px;
   background: #434343;
@@ -425,20 +425,20 @@ fieldset {
   .selection__result-ratio {
     font-size: 18px;
   }
-  .main__box_selection, .main__subtitle{
+  .main__box_selection,
+  .main__subtitle {
     min-width: 260px;
   }
-  .header__container{
-   min-width: 255px;
-
+  .header__container {
+    min-width: 255px;
   }
-  .main__box-question{
+  .main__box-question {
     min-width: 336px;
   }
   .main__subtitle {
-  padding-right: 40px;
-}
-.main__title {
-  font-size: 40px;
-}
+    padding-right: 40px;
+  }
+  .main__title {
+    font-size: 40px;
+  }
 }
