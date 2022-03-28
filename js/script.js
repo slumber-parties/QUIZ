@@ -29,58 +29,58 @@ const showElem = elem => {
 
 const hideElem = (elem, callback) => {
 
-let opacity = getComputedStyle(elem).getPropertyValue('opacity');
+    let opacity = getComputedStyle(elem).getPropertyValue('opacity');
 
-const animation = () => {
-opacity -= 0.05;
-elem.style.opacity = opacity;
+    const animation = () => {
+        opacity -= 0.05;
+        elem.style.opacity = opacity;
 
-if (opacity > 0 ) {
-    requestAnimationFrame(animation)
-}
-else {
-    elem.style.display = 'none';
-    if (callback) callback();
-}
-};
+        if (opacity > 0) {
+            requestAnimationFrame(animation)
+        }
+        else {
+            elem.style.display = 'none';
+            if (callback) callback();
+        }
+    };
 
-requestAnimationFrame(animation);
+    requestAnimationFrame(animation);
 
 };
 
 const renderTheme = data => {
- 
+
     const list = document.getElementsByClassName('selection__list')[0];
-   list.textContent = '';
+    list.textContent = '';
 
-   const buttons = [];
+    const buttons = [];
 
-   for(let i = 0; i < data.length; i++) {
-      const li = document.createElement('li');
-       li.className = 'selection__item';
+    for (let i = 0; i < data.length; i++) {
+        const li = document.createElement('li');
+        li.className = 'selection__item';
 
-       const button = document.createElement('button');
+        const button = document.createElement('button');
 
-       button.className= 'selection__theme';
-       button.dataset.id = data[i].id;
-       button.textContent = data[i].theme;
-       li.append(button);
-       const result = loadResult(data[i].id);
+        button.className = 'selection__theme';
+        button.dataset.id = data[i].id;
+        button.textContent = data[i].theme;
+        li.append(button);
+        const result = loadResult(data[i].id);
 
-       if (result) {
-           
-        const p = document.createElement('p');
+        if (result) {
 
-         p.className = 'selection__result';
-         p.innerHTML = `
+            const p = document.createElement('p');
+
+            p.className = 'selection__result';
+            p.innerHTML = `
             <span class="selection__result-ratio">${result}/${data[i].list.length}</span>
-            <span class="selection__result-text">Последний результат</span>`;  
+            <span class="selection__result-text">Последний результат</span>`;
 
             li.append(p);
-       }
+        }
 
-      list.append(li);
-      buttons.push(button);
+        list.append(li);
+        buttons.push(button);
 
     }
 
@@ -109,14 +109,15 @@ const shuffle = array => {
 }
 
 const loadResult = id => {
-   return localStorage.getItem(id);
+
+    return localStorage.getItem(id);
 }
 
 const createKeyAnswers = data => {
 
     const keys = [];
 
-    for(let i = 0; i < data.answers.length; i++) {
+    for (let i = 0; i < data.answers.length; i++) {
 
         if (data.type === 'radio') {
 
@@ -174,7 +175,7 @@ const showResult = (result, quiz) => {
     for (let i = 0; i < quiz.result.length; i++) {
 
         if (percent >= quiz.result[i][0]) ratio = i;
-        
+
     }
     block.innerHTML = `
         <h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
@@ -194,7 +195,7 @@ const showResult = (result, quiz) => {
 
     button.addEventListener('click', () => {
         hideElem(block, initQuiz);
-    
+
     });
 
 };
@@ -242,7 +243,7 @@ const renderQuiz = quiz => {
         button.className = 'main__btn question__next';
         button.type = 'submit';
         button.textContent = 'Подтвердить';
-    
+
 
         fieldset.append(legend, ...answersData.labels);
         form.append(fieldset, button);
@@ -257,7 +258,7 @@ const renderQuiz = quiz => {
 
             let ok = false;
 
-           const answer = [...form.answer].map(input => {
+            const answer = [...form.answer].map(input => {
 
                 if (input.checked) ok = true;
                 return input.checked ? input.value : false;
@@ -266,27 +267,27 @@ const renderQuiz = quiz => {
 
             if (ok) {
 
-         if ( answer.every((result, i) => !!result === answersData.keys[i]) ) {
+                if (answer.every((result, i) => !!result === answersData.keys[i])) {
 
-            result++;
+                    result++;
 
-         }
+                }
 
                 if (questionCount < quiz.list.length) {
 
-                    showQuestion();  
+                    showQuestion();
 
                 } else {
 
                     saveResult(result, quiz.id);
                     hideElem(questionBox, () => {
-                          showResult(result, quiz); 
+                        showResult(result, quiz);
                     });
-        
+
                 }
-              
+
             } else {
-               
+
                 form.classList.add('main__form-question_error');
 
                 setTimeout(() => {
@@ -294,15 +295,15 @@ const renderQuiz = quiz => {
                 }, 1000)
             }
         });
-        };
+    };
     showQuestion();
 };
 
 const addClick = (buttons, data) => {
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-          const quiz = data.find(item => item.id === btn.dataset.id);
-          renderQuiz(quiz);
+            const quiz = data.find(item => item.id === btn.dataset.id);
+            renderQuiz(quiz);
         })
     });
 };

@@ -1,360 +1,680 @@
-[{
-  "id": "1167",
-  "theme": "Python",
-  "result": [
-    [20, "Есть куда расти"],
-    [60, "Очень хорошо, но кое-где есть пробелы"],
-    [80, "Превосходный результат!"]
-  ],
-  "list": [
-    {
-      "type": "checkbox",
-      "question": "В какой версии python появился оператор 'морж'(:=)?",
-      "answers": ["Еще не появился", "Python 3.8", "Python 3.4", "Python 3.7"],
-      "correct": 2
-    },
-    {
-      "type": "radio",
-      "question": "Какого понятия в python не существует?",
-      "answers": ["Python simplification", "Python interning", "Name mangling", "List comprehension "]
-
-    },
-    {
-      "type": "checkbox",
-      "question": "Какие built-in methods существуют в последней версии python?",
-      "answers": ["ascii(), breakpoint(), locals(), issubclass()", "any(). compile(), exec(), bytesarray()", "div(), slice(), memoryview(), __import__()", "reduce(), defaultdict(), help(), oct()"],
-      "correct": 3
-    },
-    {
-      "type": "checkbox",
-      "question": "Какие встроенные структуры данных существуют в python?",
-      "answers": ["list", "map", "frozenset", "array"],
-      "correct": 3
-    },
-    {
-      "type": "checkbox",
-      "question": "Какое/Какие из выражений ложно/ложны?",
-      "answers": [">>> n = 766, >>> m = 766, >>> n is m", "id(object()) == id(object())", "'My name is Python' is 'My name is Python'", "'*'*5 is '*****'"],
-      "correct": 4
-    },
-    {
-      "type": "checkbox",
-      "question": "Выберите варианты ответа, где все методы есть методами словаря dict().",
-      "answers": ["get(), set(), keys(), items()", "update(), remove(), values(), copy()", "setdefault(), popitem(), pop(), fromkeys()", "clear(), get(), push(), index()"],
-      "correct": 3
-    },
-    {
-      "type": "checkbox",
-      "question": "Какое/какие из выражений выбросит исключение TypeError?",
-      "answers": ["(1, 2) + (2, 3)", "{1, 2} + {2, 3}", "(1) + (2)", "[1, 2]  + [2,3]"],
-      "correct": 3
-    },
-    {
-      "type": "checkbox",
-      "question": "Какие методы list никогда не меняют существующий список? Возможно, какие-то из перечисленных методов не существуют.",
-      "answers": ["copy(), index(), count()", "index(), copy(), sum()", "sort(), append(), reverse()", "pop(), sort(), insert()"],
-      "correct": 2
-    
-    },
-    {
-      "type": "radio",
-      "question": "import this вернет дзен питона. Какого утверждения в дзене питона нет?",
-      "answers": ["Все эти утверждения есть в дзене", "Complex is better than complicated", "In the face of ambiguity, refuse the temptation to guess", "If the implementation is easy to explain, it may be a good idea "]
-    }
-  ]
-},
-{
-  "id": "23023",
-  "theme": "Макияж",
-  "result": [
-    [20, "Есть зададтки, нужно развивать"],
-    [50, "Очень хорошо, вы разбирайтесь в теме бьюти"],
-    [80, "Отличный результат"]
-  ],
-  "list": [
-    {
-      "type": "radio",
-      "question": "Что такое Смоки айс?",
-      "answers": ["Макияж глаз", "Макияж в холодных оттенках", "Название теней", "Вид контуринга"]
-    },
-    {
-      "type": "radio",
-      "question": "Что такое шиммер?",
-      "answers": ["Косметическое средство с мерцающим эффектом", "Прибор для ухода за лицом", "Щеточка для бровей", "Щеточка для ресниц"]
-    },
-    {
-      "type": "radio",
-      "question": "В какой форме производится хайлайтер?",
-      "answers": ["В жидкой, кремовой и порошковой форме", "Только в жидкой форме", "Только в порошковой форме", "Только в кремовой форме"]
-    },
-    {
-      "type": "radio",
-      "question": "Что такое кайал?",
-      "answers": ["Контурный карандаш для подводки глаз", "Небольшая губка для распределения тонального крема", "Большая косметическая кисть ", "Карандаш для бровей на жидкой основе"]
-    },
-    {
-      "type": "radio",
-      "question": "Корректор для лица:",
-      "answers": ["Наносится точечно на проблемные участки кожи", "Наносится на всё лицо", "Наносится только под глаза", "Наносится на зоны высветления лица"]
-    },
-    {
-      "type": "radio",
-      "question": "Скульптор для лица нужен:",
-      "answers": ["Для прорисовывания всех естественныех теневых зон на лице", "Чтобы скрыть проблемные участки кожи", "Для высветления зоны под глазами", "Для затемнения зоны подбородка"]
-    },
-    {
-      "type": "radio",
-      "question": "Что делали дамы в Викторианскую эпоху, когда макияжа считался проявлением аморальности, чтобы не использовать румяну и помаду?",
-      "answers": ["Щипали свои щёки и кусали губы", "Пили красное вино с листьями бузины", "Носили маски, закрывающие половину лица", "Использовали только натуральные красители (свёклу и морковь)"]
-    }
-  ]
-},
+[
+  {
+    "id": "1167",
+    "theme": "Python",
+    "result": [
+      [
+        20,
+        "Есть куда расти"
+      ],
+      [
+        60,
+        "Очень хорошо, но кое-где есть пробелы"
+      ],
+      [
+        80,
+        "Превосходный результат!"
+      ]
+    ],
+    "list": [
+      {
+        "type": "checkbox",
+        "question": "В какой версии python появился оператор 'морж'(:=)?",
+        "answers": [
+          "Еще не появился",
+          "Python 3.8",
+          "Python 3.4",
+          "Python 3.7"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "radio",
+        "question": "Какого понятия в python не существует?",
+        "answers": [
+          "Python simplification",
+          "Python interning",
+          "Name mangling",
+          "List comprehension "
+        ]
+      },
+      {
+        "type": "checkbox",
+        "question": "Какие built-in methods существуют в последней версии python?",
+        "answers": [
+          "ascii(), breakpoint(), locals(), issubclass()",
+          "any(). compile(), exec(), bytesarray()",
+          "div(), slice(), memoryview(), __import__()",
+          "reduce(), defaultdict(), help(), oct()"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "checkbox",
+        "question": "Какие встроенные структуры данных существуют в python?",
+        "answers": [
+          "list",
+          "map",
+          "frozenset",
+          "array"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "checkbox",
+        "question": "Какое/Какие из выражений ложно/ложны?",
+        "answers": [
+          ">>> n = 766, >>> m = 766, >>> n is m",
+          "id(object()) == id(object())",
+          "'My name is Python' is 'My name is Python'",
+          "'*'*5 is '*****'"
+        ],
+        "correct": 4
+      },
+      {
+        "type": "checkbox",
+        "question": "Выберите варианты ответа, где все методы есть методами словаря dict().",
+        "answers": [
+          "get(), set(), keys(), items()",
+          "update(), remove(), values(), copy()",
+          "setdefault(), popitem(), pop(), fromkeys()",
+          "clear(), get(), push(), index()"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "checkbox",
+        "question": "Какое/какие из выражений выбросит исключение TypeError?",
+        "answers": [
+          "(1, 2) + (2, 3)",
+          "{1, 2} + {2, 3}",
+          "(1) + (2)",
+          "[1, 2]  + [2,3]"
+        ],
+        "correct": 3
+      },
+      {
+        "type": "checkbox",
+        "question": "Какие методы list никогда не меняют существующий список? Возможно, какие-то из перечисленных методов не существуют.",
+        "answers": [
+          "copy(), index(), count()",
+          "index(), copy(), sum()",
+          "sort(), append(), reverse()",
+          "pop(), sort(), insert()"
+        ],
+        "correct": 2
+      },
+      {
+        "type": "radio",
+        "question": "import this вернет дзен питона. Какого утверждения в дзене питона нет?",
+        "answers": [
+          "Все эти утверждения есть в дзене",
+          "Complex is better than complicated",
+          "In the face of ambiguity, refuse the temptation to guess",
+          "If the implementation is easy to explain, it may be a good idea "
+        ]
+      }
+    ]
+  },
+  {
+    "id": "23023",
+    "theme": "Макияж",
+    "result": [
+      [
+        20,
+        "Есть задатки, нужно развивать"
+      ],
+      [
+        50,
+        "Очень хорошо, вы разбирайтесь в теме бьюти"
+      ],
+      [
+        80,
+        "Отличный результат"
+      ]
+    ],
+    "list": [
+      {
+        "type": "radio",
+        "question": "Что такое Смоки айс?",
+        "answers": [
+          "Макияж глаз",
+          "Макияж в холодных оттенках",
+          "Название теней",
+          "Вид контуринга"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "Что такое шиммер?",
+        "answers": [
+          "Косметическое средство с мерцающим эффектом",
+          "Прибор для ухода за лицом",
+          "Щеточка для бровей",
+          "Щеточка для ресниц"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "В какой форме производится хайлайтер?",
+        "answers": [
+          "В жидкой, кремовой и порошковой форме",
+          "Только в жидкой форме",
+          "Только в порошковой форме",
+          "Только в кремовой форме"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "Что такое кайал?",
+        "answers": [
+          "Контурный карандаш для подводки глаз",
+          "Небольшая губка для распределения тонального крема",
+          "Большая косметическая кисть ",
+          "Карандаш для бровей на жидкой основе"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "Корректор для лица:",
+        "answers": [
+          "Наносится точечно на проблемные участки кожи",
+          "Наносится на всё лицо",
+          "Наносится только под глаза",
+          "Наносится на зоны высветления лица"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "Скульптор для лица нужен:",
+        "answers": [
+          "Для прорисовывания всех естественныех теневых зон на лице",
+          "Чтобы скрыть проблемные участки кожи",
+          "Для высветления зоны под глазами",
+          "Для затемнения зоны подбородка"
+        ]
+      },
+      {
+        "type": "radio",
+        "question": "Что делали дамы в Викторианскую эпоху, когда макияжа считался проявлением аморальности, чтобы не использовать румяну и помаду?",
+        "answers": [
+          "Щипали свои щёки и кусали губы",
+          "Пили красное вино с листьями бузины",
+          "Носили маски, закрывающие половину лица",
+          "Использовали только натуральные красители (свёклу и морковь)"
+        ]
+      }
+    ]
+  },
   {
     "id": "622",
     "theme": "Frontend",
     "result": [
-      [30, "есть зададтки, нужно развивать"],
-      [60, "очень хорошо, но есть пробелы"],
-      [90, "отличный результат"]
+      [
+        30,
+        "есть задатки, нужно развивать"
+      ],
+      [
+        60,
+        "очень хорошо, но есть пробелы"
+      ],
+      [
+        90,
+        "отличный результат"
+      ]
     ],
     "list": [
       {
         "type": "radio",
         "question": "Расшифруйте аббревиатуру HTML",
-        "answers": ["HyperText Markup Language", "HeadingText Markup Language", "HyperText Mode Language", "HeadingText Markup Language"]
+        "answers": [
+          "HyperText Markup Language",
+          "HeadingText Markup Language",
+          "HyperText Mode Language",
+          "HeadingText Markup Language"
+        ]
       },
       {
         "type": "radio",
         "question": "Какой тег используется для создания ссылки",
-        "answers": ["<a>", "<link>", "<p>", "<button>"]
+        "answers": [
+          "<a>",
+          "<link>",
+          "<p>",
+          "<button>"
+        ]
       },
       {
         "type": "radio",
         "question": "Где должен быть тег title?",
-        "answers": ["head", "main", "body", "footer"],
+        "answers": [
+          "head",
+          "main",
+          "body",
+          "footer"
+        ],
         "correct": 1
       },
       {
         "type": "radio",
         "question": "Какая из предложенных ссылок является абсолютной?",
-        "answers": ["http://www.site.com/page.html", "/page.html", "./page.html", "page.html"]
+        "answers": [
+          "http://www.site.com/page.html",
+          "/page.html",
+          "./page.html",
+          "page.html"
+        ]
       },
       {
         "type": "radio",
         "question": "Тег для вывода изображений",
-        "answers": ["img", "image", "picture", "figure"]
+        "answers": [
+          "img",
+          "image",
+          "picture",
+          "figure"
+        ]
       },
       {
         "type": "radio",
         "question": "Можно ли строчные элементы вкладывать в блочные?",
-        "answers": ["да, можно", "нет, это не семантичная верстка", "можно, только осторожно", "нет, это не валидно"]
+        "answers": [
+          "да, можно",
+          "нет, это не семантичная верстка",
+          "можно, только осторожно",
+          "нет, это не валидно"
+        ]
       },
       {
         "type": "radio",
         "question": "Сколько атрибутов id может быть на странице",
-        "answers": ["Один", "Два", "Сколько угодно", "Не одного, нет такого атрибута"]
+        "answers": [
+          "Один",
+          "Два",
+          "Сколько угодно",
+          "Не одного, нет такого атрибута"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Какие теги используются для списков",
-        "answers": ["dl", "ol", "ul", "rl"],
+        "answers": [
+          "dl",
+          "ol",
+          "ul",
+          "rl"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Как сделать элемент flex-контейнером?",
-        "answers": ["display: flex", "<flex>", "class=\"flex\"", "flex: 1"]
+        "answers": [
+          "display: flex",
+          "<flex>",
+          "class=\"flex\"",
+          "flex: 1"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Выберите значения свойства justify-content",
-        "answers": ["space-around", "space-between", "space-evenly", "space-revert"],
+        "answers": [
+          "space-around",
+          "space-between",
+          "space-evenly",
+          "space-revert"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Какое значение по умолчанию у свойства align-items?",
-        "answers": ["stretch", "initial", "center", "space-around"]
+        "answers": [
+          "stretch",
+          "initial",
+          "center",
+          "space-around"
+        ]
       },
       {
         "type": "radio",
         "question": "Можно ли использовать технологию Flex и Grid в одном проекте?",
-        "answers": ["да", "нет", "да, но только на разных страницах", "нет это сломает вёрстку"]
+        "answers": [
+          "да",
+          "нет",
+          "да, но только на разных страницах",
+          "нет это сломает вёрстку"
+        ]
       },
       {
         "type": "radio",
         "question": "Может ли грид-элемент быть грид-контейнером?",
-        "answers": ["да", "нет, вёрстка сломается", "да, только если inline-grid", "нет, так не работает"]
+        "answers": [
+          "да",
+          "нет, вёрстка сломается",
+          "да, только если inline-grid",
+          "нет, так не работает"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Как в JavaScript создать массив?",
-        "answers": ["[]", "new Array()", "Array()", "array()"],
+        "answers": [
+          "[]",
+          "new Array()",
+          "Array()",
+          "array()"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Этот оператор завершает выполнение текущей функции и возвращает её значение.",
-        "answers": ["return", "break", "throw", "catch"]
-
+        "answers": [
+          "return",
+          "break",
+          "throw",
+          "catch"
+        ]
       },
       {
         "type": "radio",
         "question": "Расшифруйте аббревиатуру DOM",
-        "answers": ["Document Object Model", "Document Objects Mode", "Digital Optical Modulation", "Digital Optical Modul"]
+        "answers": [
+          "Document Object Model",
+          "Document Objects Mode",
+          "Digital Optical Modulation",
+          "Digital Optical Modul"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Метод, который округляет аргумент",
-        "answers": ["Math.ceil()", "Math.floor()", "Math.round()", "Math.pow()"],
+        "answers": [
+          "Math.ceil()",
+          "Math.floor()",
+          "Math.round()",
+          "Math.pow()"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Этот метод разбивает строку на подстроки в виде массив строк",
-        "answers": ["split()", "slice()", "charAt()", "splice()"]
+        "answers": [
+          "split()",
+          "slice()",
+          "charAt()",
+          "splice()"
+        ]
       },
       {
         "type": "radio",
         "question": "Что вернет выражение parseInt('007')",
-        "answers": ["7", "'007'", "ошибка", "ничего"]
+        "answers": [
+          "7",
+          "'007'",
+          "ошибка",
+          "ничего"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Как добавить элемент elem в массив array?",
-        "answers": ["array.push(elem)", "array.shift(elem)", "array[array.length] = elem", "array.pop(elem)"],
+        "answers": [
+          "array.push(elem)",
+          "array.shift(elem)",
+          "array[array.length] = elem",
+          "array.pop(elem)"
+        ],
         "correct": 3
       }
     ]
   },
-
   {
     "id": "57135",
     "theme": "JavaScript",
     "result": [
-      [20, "есть зададтки, нужно развивать"],
-      [60, "очень хорошо, но есть пробелы"],
-      [90, "отличный результат"]
+      [
+        20,
+        "есть задатки, нужно развивать"
+      ],
+      [
+        60,
+        "очень хорошо, но есть пробелы"
+      ],
+      [
+        90,
+        "отличный результат"
+      ]
     ],
     "list": [
       {
         "type": "checkbox",
         "question": "Как в JavaScript создать массив?",
-        "answers": ["[]", "new Array()", "Array()", "array()"],
+        "answers": [
+          "[]",
+          "new Array()",
+          "Array()",
+          "array()"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Этот оператор завершает выполнение текущей функции и возвращает её значение.",
-        "answers": ["return", "break", "throw", "catch"]
-
+        "answers": [
+          "return",
+          "break",
+          "throw",
+          "catch"
+        ]
       },
       {
         "type": "radio",
         "question": "Расшифруйте аббревиатуру DOM",
-        "answers": ["Document Object Model", "Document Objects Mode", "Digital Optical Modulation", "Digital Optical Modul"]
+        "answers": [
+          "Document Object Model",
+          "Document Objects Mode",
+          "Digital Optical Modulation",
+          "Digital Optical Modul"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Метод, который округляет аргумент",
-        "answers": ["Math.ceil()", "Math.floor()", "Math.round()", "Math.pow()"],
+        "answers": [
+          "Math.ceil()",
+          "Math.floor()",
+          "Math.round()",
+          "Math.pow()"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Этот метод разбивает строку на подстроки в виде массив строк",
-        "answers": ["split()", "slice()", "charAt()", "splice()"]
+        "answers": [
+          "split()",
+          "slice()",
+          "charAt()",
+          "splice()"
+        ]
       },
       {
         "type": "radio",
         "question": "Что вернет выражение parseInt('007')",
-        "answers": ["7", "'007'", "ошибка", "ничего"]
+        "answers": [
+          "7",
+          "'007'",
+          "ошибка",
+          "ничего"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Как добавить элемент elem в массив array?",
-        "answers": ["array.push(elem)", "array.shift(elem)", "array[array.length] = elem", "array.pop(elem)"],
+        "answers": [
+          "array.push(elem)",
+          "array.shift(elem)",
+          "array[array.length] = elem",
+          "array.pop(elem)"
+        ],
         "correct": 3
       }
     ]
   },
-  
   {
     "id": "89345",
     "theme": "HTML",
     "result": [
-      [10, "есть зададтки, нужно развивать"],
-      [60, "очень хорошо, но есть пробелы"],
-      [90, "отличный результат"]
+      [
+        10,
+        "есть задатки, нужно развивать"
+      ],
+      [
+        60,
+        "очень хорошо, но есть пробелы"
+      ],
+      [
+        90,
+        "отличный результат"
+      ]
     ],
     "list": [
       {
         "type": "radio",
         "question": "Расшифруйте аббревиатуру HTML",
-        "answers": ["HyperText Markup Language", "HeadingText Markup Language", "HyperText Mode Language", "HeadingText Markup Language"]
+        "answers": [
+          "HyperText Markup Language",
+          "HeadingText Markup Language",
+          "HyperText Mode Language",
+          "HeadingText Markup Language"
+        ]
       },
       {
         "type": "radio",
         "question": "Какой тег используется для создания ссылки",
-        "answers": ["<a>", "<link>", "<p>", "<button>"]
+        "answers": [
+          "<a>",
+          "<link>",
+          "<p>",
+          "<button>"
+        ]
       },
       {
         "type": "radio",
         "question": "Где должен быть тег title?",
-        "answers": ["head", "main", "body", "footer"],
+        "answers": [
+          "head",
+          "main",
+          "body",
+          "footer"
+        ],
         "correct": 1
       },
       {
         "type": "radio",
         "question": "Какая из предложенных ссылок является абсолютной?",
-        "answers": ["http://www.site.com/page.html", "/page.html", "./page.html", "page.html"]
+        "answers": [
+          "http://www.site.com/page.html",
+          "/page.html",
+          "./page.html",
+          "page.html"
+        ]
       },
       {
         "type": "radio",
         "question": "Тег для вывода изображений",
-        "answers": ["img", "image", "picture", "figure"]
+        "answers": [
+          "img",
+          "image",
+          "picture",
+          "figure"
+        ]
       },
       {
         "type": "radio",
         "question": "Можно ли строчные элементы вкладывать в блочные?",
-        "answers": ["да, можно", "нет, это не семантичная верстка", "можно, только осторожно", "нет, это не валидно"]
+        "answers": [
+          "да, можно",
+          "нет, это не семантичная верстка",
+          "можно, только осторожно",
+          "нет, это не валидно"
+        ]
       },
       {
         "type": "radio",
         "question": "Сколько атрибутов id может быть на странице",
-        "answers": ["Один", "Два", "Сколько угодно", "Не одного, нет такого атрибута"]
+        "answers": [
+          "Один",
+          "Два",
+          "Сколько угодно",
+          "Не одного, нет такого атрибута"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Какие теги используются для списков",
-        "answers": ["dl", "ol", "ul", "rl"],
+        "answers": [
+          "dl",
+          "ol",
+          "ul",
+          "rl"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Как сделать элемент flex-контейнером?",
-        "answers": ["display: flex", "<flex>", "class=\"flex\"", "flex: 1"]
+        "answers": [
+          "display: flex",
+          "<flex>",
+          "class=\"flex\"",
+          "flex: 1"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Выберите значения свойства justify-content",
-        "answers": ["space-around", "space-between", "space-evenly", "space-revert"],
+        "answers": [
+          "space-around",
+          "space-between",
+          "space-evenly",
+          "space-revert"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Какое значение по умолчанию у свойства align-items?",
-        "answers": ["stretch", "initial", "center", "space-around"]
+        "answers": [
+          "stretch",
+          "initial",
+          "center",
+          "space-around"
+        ]
       },
       {
         "type": "radio",
         "question": "Можно ли использовать технологию Flex и Grid в одном проекте?",
-        "answers": ["да", "нет", "да, но только на разных страницах", "нет это сломает вёрстку"]
+        "answers": [
+          "да",
+          "нет",
+          "да, но только на разных страницах",
+          "нет это сломает вёрстку"
+        ]
       },
       {
         "type": "radio",
         "question": "Может ли грид-элемент быть грид-контейнером?",
-        "answers": ["да", "нет, вёрстка сломается", "да, только если inline-grid", "нет, так не работает"]
+        "answers": [
+          "да",
+          "нет, вёрстка сломается",
+          "да, только если inline-grid",
+          "нет, так не работает"
+        ]
       }
     ]
   },
@@ -362,45 +682,82 @@
     "id": "73789",
     "theme": "Математика для детей",
     "result": [
-      [20, "Молодец, ты очень старался, но нужно еще потренироваться"],
-      [60, "Умница, очень хороший результат"],
-      [100, "Вот это да, это лучший результат"]
+      [
+        20,
+        "Молодец, ты очень старался, но нужно еще потренироваться"
+      ],
+      [
+        60,
+        "Умница, очень хороший результат"
+      ],
+      [
+        100,
+        "Вот это да, это лучший результат"
+      ]
     ],
     "list": [
       {
         "type": "checkbox",
         "question": "Выбери все выражения, значения которых равны 6",
-        "answers": ["24 : 4", "42 : 7", "30 : 5", "48 : 6"],
+        "answers": [
+          "24 : 4",
+          "42 : 7",
+          "30 : 5",
+          "48 : 6"
+        ],
         "correct": 3
       },
       {
         "type": "radio",
         "question": "Цена одной наклейки 4 рубля. Сколько рублей нужно заплатить за 8 таких наклеек?",
-        "answers": ["4 · 8 = 32 (р.)", "4 + 8 = 12 (р.)", "8 : 4 = 2 (р.)", "8 – 4 = 4 (р.)"]
-  
+        "answers": [
+          "4 · 8 = 32 (р.)",
+          "4 + 8 = 12 (р.)",
+          "8 : 4 = 2 (р.)",
+          "8 – 4 = 4 (р.)"
+        ]
       },
       {
         "type": "checkbox",
         "question": "Выбери все выражения, значения которых равны 0",
-        "answers": ["0 · 43", "0 · 1", "52 : 1", "1 · 30"],
+        "answers": [
+          "0 · 43",
+          "0 · 1",
+          "52 : 1",
+          "1 · 30"
+        ],
         "correct": 2
       },
       {
         "type": "radio",
         "question": "Для украшения 3 одинаковых тортов нужно 24 розочки. Сколько розочек необходимо для украшения 6 таких тортов?",
-        "answers": ["48", "36", "72", "56"]
+        "answers": [
+          "48",
+          "36",
+          "72",
+          "56"
+        ]
       },
       {
         "type": "radio",
         "question": "Летом Юра отдыхал на море. Там он собрал 10 больших ракушек, а маленьких в 2 раза больше. Сколько всего ракушек собрал Юра?",
-        "answers": ["30", "28", "60", "40"]
+        "answers": [
+          "30",
+          "28",
+          "60",
+          "40"
+        ]
       },
       {
         "type": "radio",
         "question": "Найди площадь клумбы прямоугольной формы, если её длина 4 м, а ширина 2 м.",
-        "answers": ["8м²", "8м", "6м²", "6м"]
+        "answers": [
+          "8м²",
+          "8м",
+          "6м²",
+          "6м"
+        ]
       }
     ]
   }
- 
 ]
