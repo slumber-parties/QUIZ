@@ -205,6 +205,7 @@ button {
   font-weight: 300;
   font-size: 18px;
   color: #8c8c8c;
+  margin-right: 20px;
 }
 fieldset {
   display: flex;
@@ -358,8 +359,6 @@ fieldset {
   margin-top: 20px;
 }
 
-.result__return {
-}
 @media (max-width: 1024px) {
   .selection__list {
     padding-right: 30px;
@@ -426,4 +425,20 @@ fieldset {
   .selection__result-ratio {
     font-size: 18px;
   }
+  .main__box_selection, .main__subtitle{
+    min-width: 260px;
+  }
+  .header__container{
+   min-width: 255px;
+
+  }
+  .main__box-question{
+    min-width: 336px;
+  }
+  .main__subtitle {
+  padding-right: 40px;
+}
+.main__title {
+  font-size: 40px;
+}
 }
